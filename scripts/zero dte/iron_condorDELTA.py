@@ -15,6 +15,7 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 config_file_path = os.path.join(script_directory, '..', '..', 'config.ini')
 config.read(config_file_path)
 socket_port = config.getint('General', 'socket_port')
+client_id = config.getint('General', 'client_id')
 live_trading = True
 availableMargin = float(config.getint('Iron Condor', 'margin'))
 submit_time_str = config.get('Iron Condor', 'submit_time')
@@ -51,7 +52,7 @@ class bot():
         #connect to IB
         try:
             self.ib = IB()
-            self.ib.connect("127.0.0.1", socket_port, clientId=1)
+            self.ib.connect("127.0.0.1", socket_port, clientId=client_id)
            
             self.fetch_marketdata()
             self.ib.run()

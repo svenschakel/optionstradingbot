@@ -15,6 +15,7 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 config_file_path = os.path.join(script_directory, '..', '..', 'config.ini')
 config.read(config_file_path)
 socket_port = config.getint('General', 'socket_port')
+client_id = config.getint('General', 'client_id')
 currentSSMargin = config.get('Short Strangle', 'margin')
 SScompounding = config.getboolean('Short Strangle', 'compounding')
 currentICMargin = config.get('Iron Condor', 'margin')
@@ -41,7 +42,7 @@ class bot():
         self.telegram_bot_sendtext('tradelog script running. connecting to IB...')
         try:
             self.ib = IB()
-            self.ib.connect("127.0.0.1", socket_port, clientId=1)
+            self.ib.connect("127.0.0.1", socket_port, clientId=client_id)
 
             self.find_strategies()
             self.ib.run()

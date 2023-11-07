@@ -10,7 +10,8 @@ import csv
 config = configparser.ConfigParser(allow_no_value=True)
 
 config['General'] = {
-    'socket_port': '7497'
+    'socket_port': '7497',
+    'client_id': '1'
 }
 
 config['Short Strangle'] = {
