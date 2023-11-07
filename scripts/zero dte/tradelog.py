@@ -314,7 +314,7 @@ class bot():
             #update margin in config.ini file
             newMargin = float(currentICMargin) + dailyPnL
             newMargin = round(newMargin)
-            config.set('IRON CONDOR', 'margin', f'{newMargin}')
+            config.set('Iron Condor', 'margin', f'{newMargin}')
             with open(config_file_path, 'w') as configfile:
                 config.write(configfile)
 
