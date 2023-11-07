@@ -1,3 +1,12 @@
+#
+config.ini
+tradelogs/
+bat files/
+scripts/__pycache__
+scripts/A14/__pycache__
+scripts/A14/a14weekly.pkl
+scripts/timezone/__pycache__
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
