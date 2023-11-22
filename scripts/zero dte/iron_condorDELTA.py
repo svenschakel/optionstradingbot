@@ -215,11 +215,11 @@ class bot():
             
             self.ib.sleep(20)
             if combo_trade.orderStatus.status == "Filled":
-                print(f"limit order filled.")
-                self.telegram_bot_sendtext(f"limit order filled.\ncontracts: {self.contract_quantity}; margin: {round(self.reqMargin * self.contract_quantity)}\nCALL strike: {self.call_strikePrice}; bid: {self.call_bidPrice}; delta: {abs(round(self.call_Delta, 2))}\nPUT strike: {self.put_strikePrice}; bid: {self.put_bidPrice}; delta: {abs(round(self.put_Delta, 2))}\n")
-                
                 self.stopPrice = (abs(combo_trade.orderStatus.avgFillPrice)+2*ironCondor_askPrice)*2
                 self.combo_orderId = combo_trade.orderStatus.orderId
+
+                print(f"limit order filled.")
+                self.telegram_bot_sendtext(f"limit order filled.\ncontracts: {self.contract_quantity}; margin: {round(self.reqMargin * self.contract_quantity)}\nCALL strike: {self.call_strikePrice}; bid: {self.call_bidPrice}; delta: {abs(round(self.call_Delta, 2))}\nPUT strike: {self.put_strikePrice}; bid: {self.put_bidPrice}; delta: {abs(round(self.put_Delta, 2))}\nstopprice: {self.stopPrice}\n")
                 
                 #SUBMIT STOP ORDERS
                 call_stopOrder = StopOrder('BUY', self.contract_quantity, self.stopPrice, transmit=live_trading)
