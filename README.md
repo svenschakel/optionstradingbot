@@ -11,10 +11,9 @@ Everything has been optimized to allow for a quick and easy installation process
 2. With Python installed, we can install the required packages by typing the following commands in cmd (make sure to insert the path to where you saved the repository): 
 
 ::
-
-
   cd /path/to/directory
   pip install -r requirements.txt
+::
 
 3. Subsequently, install TWS or IB Gateway and the TWS API. In case you want to use IBC(https://github.com/IbcAlpha/IBC) to automate logging in, you'll need the offline version of TWS which can be downloaded at https://www.ibtws.com/en/trading/tws-offline-stable.php. Download the TWS API at https://interactivebrokers.github.io/.
 4. To be able to receive market data from IB, you need to deposit a minimum amount of $500. Furthermore, two market data subscriptions are required to be able to receive market data from IB, namely: "US Securities Snapshot and Futures Value Bundle" and "US Equity and Options Add-On Streaming Bundle".
