@@ -1,7 +1,7 @@
 Introduction
 ============
 
-This repository includes Python scripts automating various options income trading strategies. The bot connects to the Interactive Brokers API for low fee trading and, once setup, runs with minimal manual intervention. Currently, it contains two basic trading strategies: the short strangle and iron condor.
+This repository includes Python scripts automating various options income trading strategies. The bot connects to the Interactive Brokers API and runs with minimal manual intervention. Currently, it contains two basic trading strategies: the short strangle and iron condor.
 
 Installation
 ============
